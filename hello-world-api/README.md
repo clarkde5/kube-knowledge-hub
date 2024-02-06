@@ -66,15 +66,21 @@ Project created using [quickstart-aspnet-core](https://code.visualstudio.com/doc
 
 ## Delete pod again
 
+```
 (term)> kubectl delete pod -l app=helloworldapi
 (term)> kubectl get pods
+```
 
 ## Edit deployment to increse replicas
 
+```
 (term)> export KUBE_EDITOR='code --wait'
 (term)> kubectl edit deployment/helloworldapi-deployment
+```
 
 ## Cleanup
 
+```
 kubectl delete deployment/helloworldapi-deployment 
 kubectl delete service/helloworldapi-load-balancer-service
+```
