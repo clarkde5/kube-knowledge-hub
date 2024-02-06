@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworldapi
+  labels:
+    app: helloworldapi
+spec:
+  containers:
+  - image: helloworldapi:latest
+    imagePullPolicy: Never
+    name: helloworldapi
+  restartPolicy: Always
