@@ -14,12 +14,44 @@
     3. Max pods per Node
 
 2. Authenticate with ACR
+
+   ```
+   > TOKEN=$(az acr login --name todotestdocker --expose-token --output tsv --query accessToken)
+   > docker login todotestdocker.azurecr.io -u 00000000-0000-0000-0000-000000000000 -p $TOKEN
+   ```
+
 3. Authenticate with AKS
+
+   ```
+   > az login
+   > az aks get-credentials --resource-group sandbox --name dclark-aks
+   ```
 4. Build and push image to ACR using docker
    
    - Review [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)
 
+   Build image to local docker registry
+   ```
+   > docker build . -t todotestdocker.azurecr.io/helloworldapi:latest
+   ```
+
+   Tag existing image for deployment
+   ```
+   > docker image tag helloworldapi:latest todotestdocker.azurecr.io/helloworldapi:latest
+   ```
+
+   Push image to ACR
+
+   ```
+   > docker push todotestdocker.azurecr.io/helloworldapi
+   ```
+
 5. AKS <-> ACR Connectivity (using secret)
+   
+   ```
+   > kubectl create secret docker-registry todotestdocker-docker-registry-secret --docker-server=todotestdocker.azurecr.io -docker-username=00000000-0000-0000-0000-000000000000 --docker-password=$TOKEN --docker-email=none@none.com
+   ```
+
 6. Demo
     
     * Reference AKS interface and show correlation between CLI (kubectl)
