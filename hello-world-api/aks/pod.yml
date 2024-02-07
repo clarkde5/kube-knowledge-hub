@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: helloworldapi
+  labels:
+    app: helloworldapi
+spec:
+  containers:
+  - image: todotestdocker.azurecr.io/helloworldapi:latest
+    name: helloworldapi
+  imagePullSecrets:
+  - name: todotestdocker-docker-registry-secret
+  restartPolicy: Always

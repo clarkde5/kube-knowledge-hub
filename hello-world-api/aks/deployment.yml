@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworldapi-deployment  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworldapi
+  template:
+    metadata:
+      labels:
+        app: helloworldapi
+    spec:
+      containers:
+      - name: helloworldapi
+        image: todotestdocker.azurecr.io/helloworldapi:latest
+      imagePullSecrets:
+      - name: todotestdocker-docker-registry-secret
