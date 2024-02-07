@@ -9,9 +9,9 @@
 
 1. Key factors for resource expenses within AKS
     
-    1. Node pools
-    2. Node size
-    3. Max pods per Node
+    - Node pools
+    - Node size
+    - Max pods per Node
 
 2. Authenticate with ACR
 
