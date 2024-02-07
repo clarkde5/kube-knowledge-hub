@@ -15,14 +15,20 @@
 
 2. Authenticate with ACR
 3. Authenticate with AKS
-4. Build and Publish image to ACR using docker
+4. Build and push image to ACR using docker
+   
+   - Review [Multi-stage builds](https://docs.docker.com/build/building/multi-stage/)
+
 5. AKS <-> ACR Connectivity (using secret)
 6. Demo
     
     * Reference AKS interface and show correlation between CLI (kubectl)
 
-7. Networking models
-8. Ingress controller
+7. [Networking concepts for applications in AKS](https://learn.microsoft.com/en-us/azure/aks/concepts-network)
+8. [Ingress controller](https://learn.microsoft.com/en-us/azure/aks/concepts-network#ingress-controllers)
+    
+    - NGINX
+    - Application Gateway Ingress Controller (AGIC)
 
 
 # Demo
