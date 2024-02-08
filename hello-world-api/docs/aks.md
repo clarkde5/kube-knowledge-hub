@@ -49,7 +49,7 @@
 5. AKS <-> ACR Connectivity (using secret)
    
    ```
-   > kubectl create secret docker-registry todotestdocker-docker-registry-secret --docker-server=todotestdocker.azurecr.io -docker-username=00000000-0000-0000-0000-000000000000 --docker-password=$TOKEN --docker-email=none@none.com
+   > kubectl create secret docker-registry todotestdocker-docker-registry-secret --docker-server=todotestdocker.azurecr.io --docker-username=00000000-0000-0000-0000-000000000000 --docker-password=$TOKEN --docker-email=none@none.com
    ```
 
 6. Demo
